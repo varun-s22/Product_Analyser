@@ -8,6 +8,7 @@ authors = ["varun-s22 <93476421+varun-s22@users.noreply.github.com>"]
 python = "^3.10"
 bs4 = "^0.0.1"
 matplotlib = "^3.5.1"
+requests = "^2.27.1"
 
 [tool.poetry.dev-dependencies]
 
