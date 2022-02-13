@@ -1,17 +1,16 @@
 from bs4 import BeautifulSoup
 import requests
 from collections import namedtuple
-from csv import reader, writer
+from csv import writer
 import re
 
-data = namedtuple("data", ["title", "price"])
+data = namedtuple("data", ["source", "title", "price"])
 
 
 def extract_flipkart_info(soup):
-    container = soup.find(
-        id="container").contents[0].contents[2].contents[0].contents[1].contents[1].contents[-1].contents
-    extracted = data(
-        container[0].text.strip(), container[-1].contents[0].contents[0].text.split("₹")[1].strip())
+    product_price = soup.find(id="container").text.split("₹")[2]
+    product_title = soup.find("h1").text.strip()
+    extracted = data("Flipkart", product_title, product_price.strip())
     return extracted
 
 
@@ -20,8 +19,8 @@ def extract_amazon_info(soup):
     product_price = extracted.split(".")[0]
     if(product_price[0] == "₹"):
         product_price = product_price[1:]
-    product_title = soup.find(id="productTitle").text
-    extracted_data = data(product_title.strip(), product_price.strip())
+    product_title = soup.find("h1").text.strip()
+    extracted_data = data("Amazon", product_title, product_price.strip())
     return extracted_data
 
 
@@ -54,6 +53,9 @@ if(req.status_code == 200):
         extracted_data = extract_amazon_info(soup)
     elif(is_flipkart(url)):
         extracted_data = extract_flipkart_info(soup)
-    print(extracted_data.title, extracted_data.price)
+    with open("data.csv", "a") as csvfile:
+        writer = writer(csvfile)
+        writer.writerow([extracted_data.source,
+                        extracted_data.title, extracted_data.price])
 else:
     print("Server issues!!, Data can't be retrieved. Sorry!!")
