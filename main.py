@@ -19,7 +19,7 @@ def extract_amazon_info(soup):
     product_price = extracted.split(".")[0]
     if(product_price[0] == "₹"):
         product_price = product_price[1:]
-    product_title = soup.find("h1").text.strip()
+    product_title = soup.find(id="productTitle").text.strip()
     extracted_data = data("Amazon", product_title, product_price.strip())
     return extracted_data
 
