@@ -5,6 +5,8 @@ from collections import namedtuple
 from csv import writer
 import re
 import datetime
+from sendemail import *
+import lxml
 
 data = namedtuple("data", ["source", "title", "price"])
 
@@ -51,18 +53,24 @@ header = {
 url1 = "https://www.amazon.in/New-Apple-iPhone-12-128GB/dp/B08L5TNJHG/ref=sr_1_4?crid=3RU9QCTA3J5F3&keywords=iphone+12&qid=1644838387&sprefix=9rt%2Caps%2C341&sr=8-4"
 url2 = "https://www.flipkart.com/apple-iphone-12-blue-128-gb/p/itm02853ae92e90a?pid=MOBFWBYZKPTZF9VG&lid=LSTMOBFWBYZKPTZF9VGIFSM7T&marketplace=FLIPKART&q=iphone+12&store=tyy%2F4io&srno=s_1_2&otracker=search&otracker1=search&fm=Search&iid=583f4a52-3709-4320-b314-5270cd46ae0e.MOBFWBYZKPTZF9VG.SEARCH&ppt=sp&ppn=sp&ssid=l4bz7508s00000001644838374356&qH=7b7504afcaf2e1ea"
 
+
 if(__name__ == "__main__"):
+    # user_price = input("Enter price: ")
+    # user_email = input("Enter your email: ")
     req1 = requests.get(url=url1, headers=header)
     req2 = requests.get(url=url2, headers=header)
     with open("data.csv", "a") as csvfile:
         writer = writer(csvfile)
         if(req1.status_code == 200):
-            soup1 = BeautifulSoup(req1.text, "html.parser")
+            soup1 = BeautifulSoup(req1.text, "lxml")
             if(is_amazon(url1)):
                 extracted_data = extract_amazon_info(soup1)
 
                 writer.writerow([datetime.date.today().strftime("%d/%m/%Y"), extracted_data.source,
                                 extracted_data.title, extracted_data.price])
+                # if(extracted_data.price <= user_price):
+                #     send_email(user_email, extracted_data, url1)
+
         else:
             print("Server issues!!, Data can't be retrieved. Sorry!!")
 
@@ -73,6 +81,8 @@ if(__name__ == "__main__"):
 
                 writer.writerow([datetime.date.today().strftime("%d/%m/%Y"), extracted_data.source,
                                 extracted_data.title, extracted_data.price])
+                # if(extracted_data.price <= user_price):
+                # send_email(user_email, extracted_data, url2)
                 # get_graph(extracted_data)
         else:
             print("Server issues!!, Data can't be retrieved. Sorry!!")
