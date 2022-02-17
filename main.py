@@ -7,12 +7,18 @@ import re
 import datetime
 from sendemail import *
 import lxml
+import re
 
 data = namedtuple("data", ["source", "title", "price"])
 
 
 def extract_flipkart_info(soup):
-    product_price = soup.find(id="container").text.split("₹")[2]
+    product_price = soup.find(id="container").text.split("₹")
+    for ele in product_price:
+        match = re.search(r"^\d{2},\d{3}", ele)
+        if(match):
+            product_price = match.group()
+            break
     product_title = soup.find("h1").text.strip()
     extracted = data("Flipkart", product_title, product_price.strip())
     return extracted
@@ -67,9 +73,9 @@ if(__name__ == "__main__"):
                 extracted_data = extract_amazon_info(soup1)
 
                 writer.writerow([datetime.date.today().strftime("%d/%m/%Y"), extracted_data.source,
-                                extracted_data.title, extracted_data.price])
-                # if(extracted_data.price <= user_price):
-                #     send_email(user_email, extracted_data, url1)
+                                 extracted_data.title, extracted_data.price])
+        # if(extracted_data.price <= user_price):
+        #     send_email(user_email, extracted_data, url1)
 
         else:
             print("Server issues!!, Data can't be retrieved. Sorry!!")
