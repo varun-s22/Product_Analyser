@@ -15,7 +15,7 @@ data = namedtuple("data", ["source", "title", "price"])
 def extract_flipkart_info(soup):
     product_price = soup.find(id="container").text.split("₹")
     for ele in product_price:
-        match = re.search(r"^\d{2},\d{3}", ele)
+        match = re.search(r"^(\d{1,},)?(\d{1,},)?\d{3}", ele)
         if(match):
             product_price = match.group()
             break
