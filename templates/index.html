@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="../static/title-icon.png">
+
+    <title>Product Analyser</title>
+</head>
+
+<body>
+    <div id="header">
+        <nav>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                    <path
+                        d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z" />
+                </svg>
+            </a>
+
+            <span>
+                <button class="navbutton">Deals</button>
+                <button class="navbutton">Features</button>
+                <button class="navbutton">FAQs</button>
+                <button class="navbutton">Sign in</button>
+            </span>
+        </nav>
+        <h1>Product Analyser</h1>
+        <img src="../static/title.png" alt="title image" id="titleimg">
+    </div>
+    <div id="content">
+        <h2>Ready to try Product Analyser?</h2>
+        Keeping an eye on your favourite product's price?<br>
+        Well, you have arrived at the right place.<br>
+        <br>
+        Here's how it works: <br>
+        Enter the url of product whose details you want.
+        <form method="POST" action="">
+            <input type="url" placeholder="Enter url" name="url" required>
+            <button id="submitbutton"><img src="https://www.kindacode.com/wp-content/uploads/2020/12/search.png" alt=""
+                    id="searchbutton"></button>
+            <input type="text" placeholder="Enter your email" name="email">
+            <input type="text" placeholder="Enter desired price" name="desiredPrice">
+        </form>
+        <br>
+        <br>
+        <div class="odd">We will show you the information of the product. <img src="../static/info.png" alt=""
+                class="placeholder"></div> <br>
+        <div class="even"><img src="../static/pricegraph.png" alt="" class="placeholder">Plots a graph of the price
+            history, and gives you the maximum and
+            minimum
+            cost
+            reached by the
+            product.</div> <br>
+        <div class="odd">Gives you the reviews and ratings, given by user <img src="../static/review.png" alt=""
+                class="placeholder"></div> <br>
+        <div class="even">
+            <img src="../static/notify.jpg" alt="" class="placeholder">If you wish to get notified, enter your email,
+            and desired cost, and we shall
+            notify
+            you, when the cost of
+            the
+            product is desirable to you.
+        </div>
+    </div>
+
+    <hr>
+    <footer>Solely made for research purposes</footer>
+</body>
+
+</html>

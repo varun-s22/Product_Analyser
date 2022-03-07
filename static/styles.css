@@ -1,0 +1,182 @@
+body{
+    background-color: #f3ebff;
+}
+#header{
+    margin: -8px;
+    background-color: #c19df2;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+a{
+    margin-left: 10%;
+    height: 5%;
+    width: 5%;
+}
+span{
+    width: 39%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.navbutton{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 150%;
+    padding: 2%;
+    color: whitesmoke;
+    background-color: #c19df2;
+    border: 0;
+}
+.navbutton:hover{
+    cursor: pointer;
+    text-decoration: underline white;
+}
+h1{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 750%;
+    color: whitesmoke;
+    text-align: center;
+}
+@keyframes FadeEffect{
+    from{
+        opacity: 0.1;
+    }
+    to{
+        opacity: 1;
+    }
+}
+#titleimg{
+    margin-left: 29%;
+    animation: FadeEffect 1.5s ease-in;
+}
+h2{
+    color: #3b016e;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 210%;
+    text-align: center;
+}
+#content{
+    margin: 6%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 190%;
+    text-align: center;
+    line-height: 2em;
+}
+
+.placeholder{
+    width: 40%;
+    height: 40%;
+    border: 5px solid purple;
+    border-radius: 30px;
+}
+.odd{
+    display: flex;
+    text-align: right;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.5s;
+}
+.odd:hover{
+    transform: translate(-0.5em,-1em);
+    border: 3px solid navy;
+    box-shadow: 10px 5px 5px purple;
+}
+.even{
+    display: flex;
+    text-align: right;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.5s;
+}
+.even:hover{
+    transform: translate(-0.5em,-1em);
+    border: 3px solid navy;
+    box-shadow: 10px 5px 5px purple;
+}
+#searchbutton{
+    height: 30px;
+    width: 35px;
+}
+form{
+    display: flex;
+}
+input{
+    width: 60%;
+    height: 40px;
+    margin-left: 2%;
+    border: 4px purple solid;
+    padding: 0.2% 0.4%;
+    border-radius: 35px;
+    font-size: 20px;
+}
+#submitbutton{
+    margin-left: -67px;
+    background: transparent;
+    border: 0;
+}
+hr{
+    border: 2px solid black;
+}
+#error{
+    display: inline;
+    color: red;
+}
+#success{
+    border: 2px solid purple;
+    display: block;
+}
+.logo{
+    width: 14%;
+    height: 14%;
+}
+.Flipkart{
+    width: 25%;
+    height: 25%;
+}
+.Amazon{
+    width: 45%;
+    height: 45%;
+}
+.extractedContent{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: justify;
+    font-size: 90%;
+}
+.dataExtracted{
+    width: fit-content;
+    display: inline;
+}
+#onlyForm{
+    margin-left: 27%;
+}
+li{
+    text-align: justify;
+    line-height: 2em;
+    font-size: 80%;
+}
+#graph{
+    width: 75%;
+    height: 75%;
+}
+#notificationButton{
+    background-color: #35005e;
+    height: 45%;
+    width: 25%;
+    padding: 4px;
+    font-size: 150%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    color: whitesmoke;
+}
+#notificationButton:hover{
+    cursor: pointer;
+    background-color: #4a0382;
+}

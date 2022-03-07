@@ -4,12 +4,14 @@ import smtplib
 
 load_dotenv()
 
+# gets the information from .env file
 EMAILID = os.getenv("EMAILID")
 PASSWORD = os.getenv("PASSWORD")
 SERVER = os.getenv("server")
 
 
 def send_email(reciever_email, extracted, url):
+    # sends email to the user, when called
     product = extracted.title
     price = extracted.price
     connection = smtplib.SMTP(SERVER)
