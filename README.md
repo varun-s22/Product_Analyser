@@ -13,9 +13,9 @@ Namely the project uses:
 6. [SMTPLib](https://docs.python.org/3/library/smtplib.html),for sending emails to users.
 7. [TextBlob](https://textblob.readthedocs.io/en/dev/),for perfoming Sentimental Analysis on reviews of product.
 
-## Installation
-Get the code on your local machine by cloning it, and then set up the virtual enviroment.
-You are good to go after that.
+## Setup and Installation
+Currently its not hosted, so one has to run it locally, and use their own development server. Get the dependencies, and run the code `python main.py`. 
+You may also have to create a `.env` file. 
 
 ## Overview
 The code fetches data from the url entered, and then display the details on a web-page. Currently it shows:
@@ -53,4 +53,4 @@ There are many things which can be implemented to make this tool better
 
 1. Future Price prediction of the product, based on the data.
 2. Login/Register, feature.
-3. Fetch data from any site(currently is fetches from two websites).
+3. Fetch data from any site(currently it fetches from two websites).
