@@ -17,6 +17,14 @@ Namely the project uses:
 Currently its not hosted, so one has to run it locally, and use their own development server. Get the dependencies, and run the code `python main.py`. 
 You may also have to create a `.env` file. 
 
+Your `.env` file should look like this
+```
+EMAILID="<email of your account>"
+PASSWORD="<password of your account>"
+server="<corresponding smtp server of your account>"
+```
+The account refers to the email account, from which you desire to send notfications to clients.
+
 ## Overview
 The code fetches data from the url entered, and then display the details on a web-page. Currently it shows:
 
