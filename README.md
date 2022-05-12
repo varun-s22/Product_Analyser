@@ -60,5 +60,5 @@ Notifies the user, when the price drops
 There are many things which can be implemented to make this tool better
 
 1. Future Price prediction of the product, based on the data.
-2. Login/Register, feature.
+2. Authorization/Authentication
 3. Fetch data from any site(currently it fetches from two websites).
